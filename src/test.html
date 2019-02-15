@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <divclass="upload_box">
+    <b>上传图片</b>
+    <input type="file"name="file"id="file" accept="image/*" onchange="imgChange(this);"/> <!--文件上传选择按钮-->
+    <div  id="preview">
+    <img id="imghead"src=""width="260"height="180" /> <!--图片显示位置-->
+</div>
+</div>
+</div>
+<script>
+    // 选择图片显示
+    function imgChange(obj) {
+//获取点击的文本框
+        var file =document.getElementById("file");
+        var imgUrl =window.URL.createObjectURL(file.files[0]);
+        var img =document.getElementById('imghead');
+        img.setAttribute('src',imgUrl); // 修改img标签src属性值
+    };
+</script>
+</body>
+</html>
